@@ -1,6 +1,6 @@
 # Project0
 
-<img src="1.png" alt="Wireframe">
+<img src="/img/1.png" alt="Wireframe">
 
 MVP:
 
