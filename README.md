@@ -1,5 +1,7 @@
 # Project0
 
+<img src="1.png" alt="Wireframe">
+
 MVP:
 
 This game will be a time tracking program which will be aging the character within a 5 minute time frame and user needs to keep it alive by:
@@ -11,7 +13,8 @@ This game will be a time tracking program which will be aging the character with
 User also gets to name their pet.
 
 Extras:
+
 User can set a specific time frame and able to change the default 5 minute.
 
 
-<img src="1.png" alt="Wireframe">
+
