@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- Main JS -->
+  <script src="./scripts/app.js" defer></script>
+  <title>Keep Tomagotchi Alive!</title>
 </head>
 <body>
-    
+
+  <header>
+    <h1>Age: 0</h1>
+    <span id="hunger">Hunger: 10</span>
+    <span id="sleep">Sleepiness: 10</span>
+    <span id="boredom">Boredom: 10</span>
+    <button>Begin</button>
+  </header>
+
+  <div class="tomagotchi"></div>
+  
+  <button id="user" class="feed">Feed</button>
+  <button id="user" class="play">Play</button>
+  <button id="user" class="feed">Feed</button>
+
 </body>
 </html>

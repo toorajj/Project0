@@ -1,1 +1,24 @@
-sddsdfsdf
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1 {
+    padding: 0;
+    margin: 0 0 15px;
+  }
+  
+  header {
+    background-color: pink;
+    padding: 20px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    float: right;
+    margin-right: 50%;
+  }
+  
+  
