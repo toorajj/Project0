@@ -4,3 +4,4 @@ This game will be a time tracking program which will be aging the character and 
 2. letting the pet rest
 3. play with the pet
 User also gets to name their pet.
+[GitHub Logo](/images/1.png)
