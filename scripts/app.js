@@ -43,8 +43,8 @@ let bordom = 100;
 const setTime = function setTime() {
 
     const updateTime = function updateTime() {
-        console.log("Time!", time);
-        $("h1").text(`Age : ${age} Time: ${Math.round(time/60000)} minute`);
+        console.log("Time!", time); ///.pow .tofixed
+        $("h1").text(`Age : ${age} Countdown: ${(time/60000).toFixed(2)}`);
         age++;
         time = time - 4000;
         $("#hunger").text(`Hunger: ${hunger} `);
