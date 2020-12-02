@@ -14,7 +14,7 @@ header {
   padding: 10px 10px 10px 10px;
   margin: 5px 5px 5px 5px;
   border-radius: 10px;
-  max-width: 80%;
+  max-width: 95%;
   position: relative;
 }
 
@@ -32,7 +32,7 @@ h1 {
 
   font-size: large;
   display: inline;
-  
+  border-radius: 10px;
   margin: -20px 0px 20px 10px;
   position: relative;
   border: 3px solid rgb(187, 122, 218);
@@ -42,25 +42,28 @@ h1 {
 
 button {
   font-family: 'Press Start 2P', cursive;
-  float: right;
+  font-size: large;
   cursor: pointer;
   display: Block;
   position: relative;
-  top: -20px;
+  top: 10px;
+  
+  border-radius: 10px;
 }
 
 #user {
-
-  position: static;
+  font-size: large;
+  position: relative;
+  bottom: 20px;
   display: block;
-  margin: 20px;
+  margin: 30px;
   align-items: center;
 }
 
 
 
 .tomagotchi {
-  position: absolute;
+  position: relative;
   transform: translate(430%, 400%);
   min-height: 20px;
   min-width: 20px;
