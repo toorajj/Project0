@@ -36,21 +36,35 @@ const playPet = function playPet() {
 
 let time = 300000;
 let age = 0;
+let hunger = 100;
+let sleep = 100;
+let bordom = 100;
 
 const setTime = function setTime() {
 
     const updateTime = function updateTime() {
         console.log("Time!", time);
-        $("h1").text(`Age : ${age} Time:${Math.round(time/60000)}`);
+        $("h1").text(`Age : ${age} Time: ${Math.round(time/60000)} minute`);
         age++;
-        time=time-4000;
-       /* if (time <= 0) {
-            clearInterval(timer);
-            age++;
-            $("#round").text(`round: ${round}`);
-            if (age <= 4) setUpRound();
-        }*/
+        time = time - 4000;
+        $("#hunger").text(`Hunger: ${hunger} `);
+        hunger-=3;
+        $("#sleep").text(`Sleepiness: ${sleep} `);
+        sleep-=2;
+        $("#boredom").text(`Boredom: ${bordom} `);
+        bordom--;
+        if (time <= 0 /*|| hunger === 0 ||sleep === 0 || bordom === 0*/ ) {
+            killThePet();
+            
+            $("h1").text(`Age : ${age} Out of time`);
+            return;
+        }
+
     };
     const timer = setInterval(updateTime, 4000);
 };
 
+const killThePet = function killThePet() {
+
+    console.log('killed pet');
+};
