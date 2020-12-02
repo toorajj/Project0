@@ -53,11 +53,10 @@ const setTime = function setTime() {
         sleep-=2;
         $("#boredom").text(`Boredom: ${bordom} `);
         bordom--;
-        if (time <= 0 /*|| hunger === 0 ||sleep === 0 || bordom === 0*/ ) {
+        if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0 ) {
             killThePet();
-            
-            $("h1").text(`Age : ${age} Out of time`);
-            return;
+            $("h1").text(`Age : ${age} Tomagotchi Died`);
+            clearInterval(timer);
         }
 
     };
