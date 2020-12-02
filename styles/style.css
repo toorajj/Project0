@@ -1,42 +1,68 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  padding: 5;
+  margin: 5;
+  background-image: url('../img/2.png');
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
 
-  body {
-    font-family: 'Press Start 2P', cursive;
-    padding: 0;
-    margin: 0;
-    background-image: url('../img/2.png');
-    background-size: cover;
-    background-position: center;
-    background-color: transparent;
-    
-  }
+}
+
+header {
+  background-color: rgb(221, 34, 65);
+  padding: 10px 10px 10px 10px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 10px;
+  max-width: 80%;
+  position: relative;
+}
+
+h1 {
+  padding: 5px 40px 10px 10;
+  color: dodgerblue;
+  margin: 5 5 15px;
+  border: medium dashed green;
+  position: relative;
+  top: -15px;
+
+}
+
+#scoreboard {
+
+  font-size: large;
+  display: inline;
   
-  h1 {
-    padding: 0;
-    margin: 0 0 15px;
-  }
-  
-  header {
-    background-color: rgb(238, 38, 71);
-    padding: 20px;
-    margin-bottom: 15px;
-  }
-  
-  button {
-    font-family: 'Press Start 2P', cursive;
-    float: right;
-    
-  }
-  
-  #user {
-    
-    
-  /*display: block;
-   margin: 20px;*/
-   position: center;
-/*  
-left: 20%;
-right:20%;
-bottom:5%;
-top:60%;*/
-  }
-  
+  margin: -20px 0px 20px 10px;
+  position: relative;
+  border: 3px solid rgb(187, 122, 218);
+  background-color: rgb(139, 4, 139);
+
+}
+
+button {
+  font-family: 'Press Start 2P', cursive;
+  float: right;
+  cursor: pointer;
+  display: Block;
+  position: relative;
+  top: -20px;
+}
+
+#user {
+
+  position: static;
+  display: block;
+  margin: 20px;
+  align-items: center;
+}
+
+
+
+.tomagotchi {
+  position: absolute;
+  transform: translate(430%, 400%);
+  min-height: 20px;
+  min-width: 20px;
+
+}
