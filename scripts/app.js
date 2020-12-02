@@ -4,6 +4,7 @@ $("#wake").on("click", function (event) {
     console.warn("=== Keep Tomagotchi ALIVE !  ===");
     startGame();
     setTime();
+    
 
 });
 
@@ -67,3 +68,10 @@ const killThePet = function killThePet() {
 
     console.log('killed pet');
 };
+
+
+const char = function char () {
+
+    $(".tomagotchi").html("<img src='./img/egg1.png' alt='Egg image' width='200' height='300' >");
+}
+char();
