@@ -30,7 +30,7 @@ h1 {
 
 #scoreboard {
 
-  font-size: large;
+  font-size: Large;
   display: inline;
   border-radius: 10px;
   margin: -20px 0px 20px 10px;
@@ -67,5 +67,11 @@ button {
   transform: translate(430%, 400%);
   min-height: 20px;
   min-width: 20px;
+
+}
+@media (max-width: 500px){
+  #scoreboard {
+    font-size: small;
+  }
 
 }
