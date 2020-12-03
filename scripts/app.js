@@ -11,25 +11,36 @@ let bordom = 100;
 const setTime = function setTime(event) {
 
     const updateTime = function updateTime() {
-        if (age > 1) { young(); }
+        document.getElementById('noise').play();
+        if (age > 1) {
+            young();
+        }
         $("h1").text(`Age : ${age} Countdown: ${(time/60000).toFixed(2)}`);
         age++;
-        
+
         time = time - 4000;
         $("#hunger").text(`Hunger: ${hunger} `);
-        hunger -= 7; 
+        hunger -= 7;
         $("#sleep").text(`Sleepiness: ${sleep} `);
         sleep -= 8;
         $("#boredom").text(`Boredom: ${bordom} `);
-        bordom-=8;
-      
+        bordom -= 8;
+        
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
             killThePet();
             let alert = "";
-            if (time<=0) {alert="Out of time";}
-            if (hunger<=0) { alert="Out of hunger";}
-            if (sleep<=0) { alert = "Out of sleepness";}
-            if (bordom<=0) { alert = "Out of bordom";}
+            if (time <= 0 && hunger > 0 && sleep > 0 && bordom > 0) {
+                alert = "because of old age, game won !";
+            }
+            if (hunger <= 0) {
+                alert = "Out of hunger";
+            }
+            if (sleep <= 0) {
+                alert = "Out of sleepness";
+            }
+            if (bordom <= 0) {
+                alert = "Out of bordom";
+            }
             $("h1").text(`Age : ${age} Pet Died ${alert}`);
 
             clearInterval(timer);
@@ -42,24 +53,24 @@ const setTime = function setTime(event) {
 /* === Event Listeners  === */
 
 $("#wake").on("click", function (event) {
-  
+    document.getElementById('startSound').play();
     setTime();
     hatch();
     $("#wake").remove();
-    
+
 });
 $(".feed").on("click", function (event) {
     feed();
-  
+    document.getElementById('feed').play();
 });
 
 $(".play").on("click", function (event) {
     play();
-   
+    document.getElementById('play').play();
 });
 $(".light").on("click", function (event) {
     light();
-    
+    document.getElementById('lightSound').play();
 
 });
 
@@ -80,38 +91,48 @@ const killThePet = function killThePet() {
 
 const hatch = function hatch() {
     $toma.html("<img src='./img/hatch.png' alt='Hatched Egg' width='200' height='300' >");
-   
+
 };
-const young = function young(){
+const young = function young() {
     $toma.fadeIn(1000).html("<img src='./img/young.png' alt='young rooster' width='200' height='300' >");
 };
 
-const play = function play(){
-    
+const play = function play() {
+
     document.getElementById("tom").animate([
-    // keyframes
-    { transform: 'translateX( 0px)' }, 
-    { transform: 'translateY( -100px)' },
-    { transform: 'rotate(-80deg)' }
-  ], { 
-    // timing options
-    duration: 500,
-    iterations: 1
-  });
-    if(bordom<100) { bordom+=10;}
+        // keyframes
+        {
+            transform: 'translateX( 0px)'
+        },
+        {
+            transform: 'translateY( -100px)'
+        },
+        {
+            transform: 'rotate(-80deg)'
+        }
+    ], {
+        // timing options
+        duration: 500,
+        iterations: 1
+    });
+    if (bordom < 100) {
+        bordom += 10;
+    }
 };
 
 const feed = function feed() {
-        
+
+
     $feed.fadeIn(1000).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(1000);
-    if (hunger<100) {hunger+=10;}
+    if (hunger < 100) {
+        hunger += 10;
+    }
 };
 
 const light = function light() {
 
     $light.fadeOut(1000).fadeIn(5000);
-    if (sleep<100) {sleep+=8;}
+    if (sleep < 100) {
+        sleep += 8;
+    }
 };
-
-
-
