@@ -25,10 +25,13 @@ const setTime = function setTime(event) {
       
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
             killThePet();
-            $light.remove();
-            $toma.remove();
-            $feed.remove();
-            $("h1").text(`Age : ${age} Tomagotchi Died`);
+            let alert = "";
+            if (time<=0) {alert="Out of time";}
+            if (hunger<=0) { alert="Out of hunger";}
+            if (sleep<=0) { alert = "Out of sleepness";}
+            if (bordom<=0) { alert = "Out of bordom";}
+            $("h1").text(`Age : ${age} Pet Died ${alert}`);
+
             clearInterval(timer);
         }
 
@@ -69,9 +72,10 @@ const $light = $(".element").html("<img src='./img/light8.png' alt='light' width
 /* Invoked Functions */
 
 const killThePet = function killThePet() {
-
-    console.log('killed pet');
+    $light.remove();
+    $feed.remove();
     $toma.fadeOut(3000);
+    $toma.remove();
 };
 
 const hatch = function hatch() {
