@@ -5,8 +5,8 @@ body {
   background-image: url('../img/2.png');
   background-size: cover;
   background-position: center;
-  
-  
+
+
 
 }
 
@@ -48,7 +48,7 @@ button {
   display: Block;
   position: relative;
   top: 10px;
-  
+
   border-radius: 10px;
 }
 
@@ -66,17 +66,19 @@ button {
 .tomagotchi {
   position: absolute;
   transform: translate(200px, 200px);
+  
   object-position: center;
   max-height: 10px;
   max-width: 10px;
-  
- }
- .tomagotchi:hover {
-   transform: scale(1,1);
-   
- }
 
-@media (max-width: 500px){
+}
+
+/*.tomagotchi:hover {
+  transform: scale(1, 1);
+
+}*/
+
+@media (max-width: 500px) {
   #scoreboard {
     font-size: small;
   }
