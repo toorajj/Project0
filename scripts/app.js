@@ -17,17 +17,17 @@ const setTime = function setTime(event) {
         
         time = time - 4000;
         $("#hunger").text(`Hunger: ${hunger} `);
-        hunger -= 7;
+        hunger -= 7; 
         $("#sleep").text(`Sleepiness: ${sleep} `);
         sleep -= 8;
         $("#boredom").text(`Boredom: ${bordom} `);
         bordom-=8;
-        //$toma.css('transform', 'rotate(45deg)');
-        //$toma.css('transform', 'rotate(-45deg)');
+      
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
             killThePet();
             $light.remove();
             $toma.remove();
+            $feed.remove();
             $("h1").text(`Age : ${age} Tomagotchi Died`);
             clearInterval(timer);
         }
@@ -39,9 +39,10 @@ const setTime = function setTime(event) {
 /* === Event Listeners  === */
 
 $("#wake").on("click", function (event) {
-   event.stopPropagation();
+  
     setTime();
     hatch();
+    $("#wake").remove();
     
 });
 $(".feed").on("click", function (event) {
@@ -93,19 +94,19 @@ const play = function play(){
     duration: 500,
     iterations: 1
   });
-    bordom+=10;
+    if(bordom<100) { bordom+=10;}
 };
 
 const feed = function feed() {
         
     $feed.fadeIn(1000).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(1000);
-    hunger+=10;
+    if (hunger<100) {hunger+=10;}
 };
 
 const light = function light() {
 
     $light.fadeOut(1000).fadeIn(5000);
-    sleep+=8;
+    if (sleep<100) {sleep+=8;}
 };
 
 

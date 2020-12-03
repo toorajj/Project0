@@ -5,12 +5,7 @@ body {
   background-image: url('../img/2.png');
   background-size: cover;
   background-position: center;
-  width: 80vw;
   max-width: 90vw;
-  max-width: 800px;
-
-
-
 }
 
 header {
@@ -64,26 +59,32 @@ button {
 }
 
 .tomagotchi {
-  position: absolute;
+  
   animation: shake 5s;
   animation-iteration-count: infinite;
-  bottom: 50vw;
+  bottom: 25vw;
   left: 30vw;
+  position: fixed;
  
 
 }
 
 #elements {
-  position: absolute;
-  transform: translate(150px, 220px);
+  position: fixed;
+  bottom: 20vw;
+  left: 15vw;
+  animation: shake 3s;
+  
 }
 
 .element {
-
-  position: absolute;
-  bottom: 50vw;
-  left: 60vw;
-  transform: rotate(.6turn);
+  
+  position: fixed;
+  bottom: 80;
+  left: 360px;
+  animation: shake 5s;
+  animation-iteration-count: infinite;
+  
 }
 
 @keyframes shake {
