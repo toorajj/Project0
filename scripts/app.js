@@ -1,12 +1,14 @@
+/* === Variables  === */
+
 let time = 300000;
 let age = 0;
 let hunger = 100;
 let sleep = 100;
 let bordom = 100;
 
-const $toma = $(".tomagotchi").html("<img src='./img/egg1.png' alt='Egg image' width='200' height='300' >");
+/* === Functions  === */
 
-const setTime = function setTime() {
+const setTime = function setTime(event) {
 
     const updateTime = function updateTime() {
         if (age > 1) { young(); }
@@ -15,13 +17,17 @@ const setTime = function setTime() {
         
         time = time - 4000;
         $("#hunger").text(`Hunger: ${hunger} `);
-        hunger -= 6;
+        hunger -= 7;
         $("#sleep").text(`Sleepiness: ${sleep} `);
-        sleep -= 4;
+        sleep -= 8;
         $("#boredom").text(`Boredom: ${bordom} `);
-        bordom-=3;
+        bordom-=8;
+        //$toma.css('transform', 'rotate(45deg)');
+        //$toma.css('transform', 'rotate(-45deg)');
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
             killThePet();
+            $light.remove();
+            $toma.remove();
             $("h1").text(`Age : ${age} Tomagotchi Died`);
             clearInterval(timer);
         }
@@ -30,41 +36,49 @@ const setTime = function setTime() {
     const timer = setInterval(updateTime, 4000);
 };
 
-// <--- button---->
+/* === Event Listeners  === */
 
 $("#wake").on("click", function (event) {
+   event.stopPropagation();
     setTime();
     hatch();
+    
 });
 $(".feed").on("click", function (event) {
     feed();
+  
 });
 
 $(".play").on("click", function (event) {
     play();
+   
 });
 $(".light").on("click", function (event) {
     light();
+    
 
 });
 
-/////////////////////////////////
+/* === Dom Elements  === */
 
+const $toma = $(".tomagotchi").html("<img src='./img/egg1.png' alt='Egg image' width='200' height='300' >");
+const $feed = $("#elements");
+const $light = $(".element").html("<img src='./img/light8.png' alt='light' width='130' height='190' >");
 
-$(".element").html("<img src='./img/light8.png' alt='light' width='90' height='160' >");
+/* Invoked Functions */
 
 const killThePet = function killThePet() {
 
     console.log('killed pet');
-    $(".tomagotchi").fadeOut(3000);
+    $toma.fadeOut(3000);
 };
 
 const hatch = function hatch() {
-    $(".tomagotchi").html("<img src='./img/hatch.png' alt='Hatched Egg' width='200' height='300' >");
+    $toma.html("<img src='./img/hatch.png' alt='Hatched Egg' width='200' height='300' >");
    
 };
 const young = function young(){
-    $(".tomagotchi").fadeIn(1000).html("<img src='./img/young.png' alt='young rooster' width='200' height='300' >");
+    $toma.fadeIn(1000).html("<img src='./img/young.png' alt='young rooster' width='200' height='300' >");
 };
 
 const play = function play(){
@@ -79,19 +93,19 @@ const play = function play(){
     duration: 500,
     iterations: 1
   });
-    bordom+=3;
+    bordom+=10;
 };
 
 const feed = function feed() {
         
-    $("#elements").fadeIn(1000).html("<img src='./img/worm.png' alt='worm' width='50' height='150' >").fadeOut(1000);
-    hunger+=5
+    $feed.fadeIn(1000).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(1000);
+    hunger+=10;
 };
 
 const light = function light() {
 
-    $(".element").fadeOut(1000).fadeIn(5000);
-    sleep+=5;
+    $light.fadeOut(1000).fadeIn(5000);
+    sleep+=8;
 };
 
 

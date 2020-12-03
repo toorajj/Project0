@@ -6,7 +6,8 @@ body {
   background-size: cover;
   background-position: center;
   width: 80vw;
-  max-width: 900px;
+  max-width: 90vw;
+  max-width: 800px;
 
 
 
@@ -50,7 +51,6 @@ button {
   display: Block;
   position: relative;
   top: 10px;
-
   border-radius: 10px;
 }
 
@@ -63,32 +63,43 @@ button {
   align-items: center;
 }
 
-
-
 .tomagotchi {
   position: absolute;
-  transform: translate(200px, 200px);
-  
-  object-position: center;
-  max-height: 10px;
-  max-width: 10px;
+  animation: shake 5s;
+  animation-iteration-count: infinite;
+  bottom: 50vw;
+  left: 30vw;
+ 
 
 }
-
-
 
 #elements {
   position: absolute;
   transform: translate(150px, 220px);
 }
 
-.element{
+.element {
 
   position: absolute;
-  bottom: 80vw;
+  bottom: 50vw;
   left: 60vw;
   transform: rotate(.6turn);
 }
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
 
 @media (max-width: 500px) {
   #scoreboard {
