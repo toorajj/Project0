@@ -5,6 +5,8 @@ body {
   background-image: url('../img/2.png');
   background-size: cover;
   background-position: center;
+  width: 80vw;
+  max-width: 900px;
 
 
 
@@ -73,10 +75,20 @@ button {
 
 }
 
-/*.tomagotchi:hover {
-  transform: scale(1, 1);
 
-}*/
+
+#elements {
+  position: absolute;
+  transform: translate(150px, 220px);
+}
+
+.element{
+
+  position: absolute;
+  bottom: 80vw;
+  left: 60vw;
+  transform: rotate(.6turn);
+}
 
 @media (max-width: 500px) {
   #scoreboard {
