@@ -19,11 +19,11 @@ const setTime = function setTime(event) {
         age++;
 
         time = time - 4000;
-        $("#hunger").text(`Hunger:${hunger} `);
+        $("#hunger").text(`Hunger:\n ${hunger} `);
         hunger -= 7;
-        $("#sleep").text(` Sleepiness:${sleep} `);
+        $("#sleep").text(` Sleepiness:\n ${sleep} `);
         sleep -= 8;
-        $("#boredom").text(` Boredom:${bordom} `);
+        $("#boredom").text(` Boredom:\n ${bordom} `);
         bordom -= 8;
 
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
