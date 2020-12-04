@@ -102,6 +102,9 @@ const young = function young() {
 const play = function play() {
 
     animate("tom", 0, -100, -180);
+    if (bordom < 100) {
+        bordom += 7;
+    }
 };
 
 const feed = function feed() {
@@ -110,14 +113,14 @@ const feed = function feed() {
     animate("elements", -20, -20, 90);
     animate("tom", 0, 0, -90);
     if (hunger < 100) {
-        hunger += 10;
+        hunger += 5;
     }
 };
 
 const light = function light() {
     $light.fadeOut(1000).fadeIn(5000);
     if (sleep < 100) {
-        sleep += 8;
+        sleep += 9;
     }
 };
 const animate = function animate(elem, x, y, deg) {
