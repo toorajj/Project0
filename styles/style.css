@@ -75,8 +75,10 @@ button {
   position: fixed;
   bottom: 80;
   left: 360px;
-  animation: shake 5s;
-  animation-iteration-count: infinite;  
+  /*animation: shake 5s;
+  animation-iteration-count: infinite;*/ 
+  transform: rotate(190deg); 
+
 }
 
 @keyframes shake {
