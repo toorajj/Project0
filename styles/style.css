@@ -25,11 +25,9 @@ h1 {
   position: relative;
   top: -15px;
   display: flex;
-
 }
 
 #scoreboard {
-
   font-size: Large;
   display: flex;
   border-radius: 10px;
@@ -37,7 +35,6 @@ h1 {
   position: relative;
   border: 3px solid rgb(187, 122, 218);
   background-color: rgb(139, 4, 139);
-
 }
 
 button {
@@ -60,32 +57,26 @@ button {
 }
 
 .tomagotchi {
-  
   animation: shake 5s;
   animation-iteration-count: infinite;
   bottom: 25vw;
   left: 30vw;
   position: fixed;
- 
-
 }
 
 #elements {
   position: fixed;
   bottom: 20vw;
   left: 15vw;
-  animation: shake 3s;
-  
+  animation: shake 3s;  
 }
 
 .element {
-  
   position: fixed;
   bottom: 80;
   left: 360px;
   animation: shake 5s;
-  animation-iteration-count: infinite;
-  
+  animation-iteration-count: infinite;  
 }
 
 @keyframes shake {
@@ -107,5 +98,4 @@ button {
   #scoreboard {
     font-size: small;
   }
-
 }

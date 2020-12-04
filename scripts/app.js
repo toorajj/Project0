@@ -25,7 +25,7 @@ const setTime = function setTime(event) {
         sleep -= 8;
         $("#boredom").text(` Boredom: ${bordom} `);
         bordom -= 8;
-        
+
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
             killThePet();
             let alert = "";
@@ -62,7 +62,7 @@ $("#wake").on("click", function (event) {
 $(".feed").on("click", function (event) {
     feed();
     document.getElementById('feed').play();
-    
+
 });
 
 $(".play").on("click", function (event) {
@@ -101,13 +101,14 @@ const young = function young() {
 
 const play = function play() {
 
-animate("tom", 0, -100, -180);
+    animate("tom", 0, -100, -180);
 };
 
 const feed = function feed() {
 
     $feed.fadeIn(500).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(2000);
-    animate ("elements", -20, -20, 90);
+    animate("elements", -20, -20, 90);
+    animate("tom", 0, 0, -90);
     if (hunger < 100) {
         hunger += 10;
     }
