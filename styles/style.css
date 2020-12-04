@@ -31,10 +31,11 @@ h1 {
   font-size: Large;
   display: flex;
   border-radius: 10px;
-  margin: -20px 0px 20px 10px;
-  position: relative;
+  margin: 5px 5px 5px 5px;
+  position: static;
   border: 3px solid rgb(187, 122, 218);
   background-color: rgb(139, 4, 139);
+  padding: 1em;
 }
 
 button {
@@ -96,8 +97,9 @@ button {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   #scoreboard {
     font-size: small;
   }
 }
+

@@ -19,11 +19,11 @@ const setTime = function setTime(event) {
         age++;
 
         time = time - 4000;
-        $("#hunger").text(`Hunger: ${hunger} `);
+        $("#hunger").text(`Hunger:${hunger} `);
         hunger -= 7;
-        $("#sleep").text(` Sleepiness: ${sleep} `);
+        $("#sleep").text(` Sleepiness:${sleep} `);
         sleep -= 8;
-        $("#boredom").text(` Boredom: ${bordom} `);
+        $("#boredom").text(` Boredom:${bordom} `);
         bordom -= 8;
 
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
@@ -89,8 +89,9 @@ const killThePet = function killThePet() {
     $toma.fadeOut(3000);
     $toma.hide(1000);
     document.getElementById('gameOver').play();
+    $('#lightSound').remove();
+    $('#play').remove();
 };
-
 const hatch = function hatch() {
     $toma.html("<img src='./img/hatch.png' alt='Hatched Egg' width='200' height='300' >");
 
@@ -98,7 +99,6 @@ const hatch = function hatch() {
 const young = function young() {
     $toma.fadeIn(1000).html("<img src='./img/young.png' alt='young rooster' width='200' height='300' >");
 };
-
 const play = function play() {
 
     animate("tom", 0, -100, -180);
@@ -106,7 +106,6 @@ const play = function play() {
         bordom += 7;
     }
 };
-
 const feed = function feed() {
 
     $feed.fadeIn(500).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(2000);
@@ -116,7 +115,6 @@ const feed = function feed() {
         hunger += 5;
     }
 };
-
 const light = function light() {
     $light.fadeOut(1000).fadeIn(5000);
     if (sleep < 100) {
