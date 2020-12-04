@@ -24,13 +24,14 @@ h1 {
   border: medium dashed green;
   position: relative;
   top: -15px;
+  display: flex;
 
 }
 
 #scoreboard {
 
   font-size: Large;
-  display: inline;
+  display: flex;
   border-radius: 10px;
   margin: -20px 0px 20px 10px;
   position: relative;
@@ -43,7 +44,7 @@ button {
   font-family: 'Press Start 2P', cursive;
   font-size: large;
   cursor: pointer;
-  display: Block;
+  display: flex;
   position: relative;
   top: 10px;
   border-radius: 10px;

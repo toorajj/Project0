@@ -21,9 +21,9 @@ const setTime = function setTime(event) {
         time = time - 4000;
         $("#hunger").text(`Hunger: ${hunger} `);
         hunger -= 7;
-        $("#sleep").text(`Sleepiness: ${sleep} `);
+        $("#sleep").text(` Sleepiness: ${sleep} `);
         sleep -= 8;
-        $("#boredom").text(`Boredom: ${bordom} `);
+        $("#boredom").text(` Boredom: ${bordom} `);
         bordom -= 8;
         
         if (time <= 0 || hunger <= 0 || sleep <= 0 || bordom <= 0) {
@@ -56,12 +56,13 @@ $("#wake").on("click", function (event) {
     document.getElementById('startSound').play();
     setTime();
     hatch();
-    $("#wake").remove();
+    $("#wake").hide(1000);
 
 });
 $(".feed").on("click", function (event) {
     feed();
     document.getElementById('feed').play();
+    
 });
 
 $(".play").on("click", function (event) {
@@ -86,7 +87,8 @@ const killThePet = function killThePet() {
     $light.remove();
     $feed.remove();
     $toma.fadeOut(3000);
-    $toma.remove();
+    $toma.hide(1000);
+    document.getElementById('gameOver').play();
 };
 
 const hatch = function hatch() {
@@ -99,40 +101,39 @@ const young = function young() {
 
 const play = function play() {
 
-    document.getElementById("tom").animate([
-        // keyframes
-        {
-            transform: 'translateX( 0px)'
-        },
-        {
-            transform: 'translateY( -100px)'
-        },
-        {
-            transform: 'rotate(-80deg)'
-        }
-    ], {
-        // timing options
-        duration: 500,
-        iterations: 1
-    });
-    if (bordom < 100) {
-        bordom += 10;
-    }
+animate("tom", 0, -100, -180);
 };
 
 const feed = function feed() {
 
-
-    $feed.fadeIn(1000).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(1000);
+    $feed.fadeIn(500).html("<img src='./img/worm.png' alt='worm' width='80' height='180' >").fadeOut(2000);
+    animate ("elements", -20, -20, 90);
     if (hunger < 100) {
         hunger += 10;
     }
 };
 
 const light = function light() {
-
     $light.fadeOut(1000).fadeIn(5000);
     if (sleep < 100) {
         sleep += 8;
     }
+};
+const animate = function animate(elem, x, y, deg) {
+    document.getElementById(elem).animate([
+        // keyframes
+        {
+            transform: `translateX( ${x}px)`
+        },
+        {
+            transform: `translateY( ${y}px)`
+        },
+        {
+            transform: `rotate(${deg}deg)`
+        }
+    ], {
+        // timing options
+        duration: 500,
+        iterations: 1
+    });
 };
